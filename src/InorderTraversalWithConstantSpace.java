@@ -8,21 +8,70 @@ class extendedNode
     int key;
     extendedNode left, right, parent;
 
+
     public extendedNode(int item){
         key = item;
         left = null;
         right = null;
 //        previous = null;
-        parent = null;
     }
 
 }
 
-public class InorderTraversalWithConstantSpace extends extendedNode{
+class BinaryTree2 {
+    extendedNode root;
 
-    public InorderTraversalWithConstantSpace(int item){
-        super(item);
+    BinaryTree2() {
+        root = null;
     }
+
+    void postOrder(extendedNode node) {
+        if (node == null) {
+            return;
+        }
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.key + " ");
+    }
+
+    void preOrder(extendedNode node) {
+        if (node == null) {
+            return;
+        }
+
+        System.out.println(node.key + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    void inOrder(extendedNode node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println(node.key + " ");
+        inOrder(node.right);
+    }
+
+    void postOrder() {
+        System.out.println("Post Order Traversal\n");
+        postOrder(root);
+    }
+
+    void preOrder() {
+        System.out.println("Pre Order Traversal\n");
+        preOrder(root);
+    }
+
+    void inOrder() {
+        System.out.println("In Order Traversal\n");
+        inOrder(root);
+    }
+}
+
+public class InorderTraversalWithConstantSpace extends BinaryTree2{
+
 
     public List<Integer> inorderTraversal( extendedNode root){
     List<Integer> result = new ArrayList<>();
@@ -59,6 +108,23 @@ public class InorderTraversalWithConstantSpace extends extendedNode{
     }
 
     return result;
+
+    }
+
+    public static void main(String[] args) {
+        InorderTraversalWithConstantSpace tree = new InorderTraversalWithConstantSpace();
+
+        tree.root = new extendedNode(10);
+        tree.root.left = new extendedNode(20);
+        tree.root.right = new extendedNode(30);
+        tree.root.left.left = new extendedNode(40);
+        tree.root.left.right = new extendedNode(50);
+
+
+
+
+        System.out.println(tree.inorderTraversal(tree.root));
+
 
     }
 
