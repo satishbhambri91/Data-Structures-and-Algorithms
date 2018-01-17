@@ -13,7 +13,7 @@ class extendedNode
         key = item;
         left = null;
         right = null;
-//        previous = null;
+        parent = this;
     }
 
 }
