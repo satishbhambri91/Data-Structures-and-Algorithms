@@ -1,11 +1,12 @@
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Stack;
 
 class GraphRep 
 { 
-   int V; 
-   LinkedList<Integer> adjListArray[]; 
+   private int V; 
+   private LinkedList<Integer> adjListArray[]; 
       
     // constructor  
     GraphRep(int V) 
@@ -21,6 +22,7 @@ class GraphRep
         for(int i = 0; i < V ; i++){ 
             adjListArray[i] = new LinkedList<>(); 
         }
+        
     }
     
     public void addEdge(GraphRep g, int src, int dest){
@@ -51,6 +53,8 @@ class GraphRep
     
     public void BFS(int source){
     	
+    	System.out.println("BFS : ");
+    	
     	boolean visited[] = new boolean[V];
     	LinkedList<Integer> queue = new LinkedList<>();
     	
@@ -75,6 +79,35 @@ class GraphRep
     		
     	}
     }
+    
+    void DFSutil(int s, boolean visited[]){
+    	
+    	visited[s] = true;
+    	
+    	System.out.println(s+ " ");
+    	
+    	// Recur for all the vertices adjacent to this vertex 
+        Iterator<Integer> i = adjListArray[s].listIterator(); 
+        while (i.hasNext()) 
+        { 
+        	int n = i.next();
+        	if(!visited[n]){
+        		DFSutil(n, visited);
+        	}
+        }
+    }
+    
+    public void DFS(int s){
+    	
+    	System.out.println("DFS : ");
+    	boolean visited[] = new boolean[V];
+    	
+    	DFSutil(s, visited);
+    	
+    	for (int i=0; i<V; ++i) 
+            if (visited[i] == false) 
+                DFSutil(i, visited);
+    }
 } 
 public class Graph {
 	
@@ -92,6 +125,8 @@ public class Graph {
 		g.printGraph(g);
 		
 		g.BFS(0);
+		
+		g.DFS(0);
 		
 	}
 	
