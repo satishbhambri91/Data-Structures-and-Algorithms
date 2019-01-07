@@ -1,4 +1,5 @@
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 class GraphRep 
@@ -46,7 +47,34 @@ class GraphRep
             
             System.out.println("\n");
     	}
-    } 
+    }
+    
+    public void BFS(int source){
+    	
+    	boolean visited[] = new boolean[V];
+    	LinkedList<Integer> queue = new LinkedList<>();
+    	
+    	visited[source] = true;
+    	
+    	queue.add(source);
+    	
+    	while(queue.size() != 0){
+    		source = queue.poll();
+    		System.out.println(source+ " ");
+    		
+    		Iterator<Integer> i = adjListArray[source].listIterator();
+    		
+    		while(i.hasNext()){
+    			int n = i.next();
+    			
+    			if(!visited[n]){
+    				visited[n] = true;
+    				queue.add(n);
+    			}
+    		}
+    		
+    	}
+    }
 } 
 public class Graph {
 	
@@ -62,6 +90,8 @@ public class Graph {
 		g.addEdge(g, 3, 4);
 		
 		g.printGraph(g);
+		
+		g.BFS(0);
 		
 	}
 	
