@@ -108,6 +108,10 @@ class GraphRep
             if (visited[i] == false) 
                 DFSutil(i, visited);
     }
+    
+    public int detectCycle(){
+    	return 0;
+    }
 } 
 public class Graph {
 	
