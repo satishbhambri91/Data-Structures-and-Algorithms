@@ -1,0 +1,7 @@
+import java.util.*;
+public class STQ{
+	Stack<Integer> val = new Stack<Integer>();
+	Stack<Integer> temp = new Stack<Integer>();
+
+	
+}

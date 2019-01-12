@@ -1,0 +1,39 @@
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<rdfs:Class rdf:ID="Person"
+rdfs:comment="We have "Person" class as the root or the main class after the literal as mentioned in the document>
+</rdfs:Class>
+
+<rdfs:Class rdf:ID="Teacher"
+rdfs:comment="The "Teacher" classs is the subclass of the "Person" class">
+<rdfs:subClassOf rdf:resource="#Person"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:ID="Student"
+rdfs:comment="As per the digram in the document, we have "Student" class as the subclass of the "Person" class>
+<rdfs:subClassOf rdf:resource="#Person"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:ID="Course"
+rdfs:comment="The class "Course" as mentioned here in the schema represents the courses taken by the "Student" class which is the subclass of the "Person" class">
+<rdfs:Class rdf:resource="#Student"/>
+</rdfs:Class>
+
+<rdf:Property rdf:ID="has_name">
+<rdfs:domain rdf:resource="#Person"/>
+<rdfs:domain rdf:resource="#Course"/>
+<rdfs:range rdf:resource="#Literal"/>
+</rdf:Property>
+
+<rdf:Property rdf:ID="has_student">
+<rdfs:domain rdf:resource="#Course"/>
+<rdfs:range rdf:resource="#Student"/>
+</rdf:Property>
+
+<rdf:Property rdf:ID="has_teacher">
+<rdfs:domain rdf:resource="#Course"/>
+<rdfs:range rdf:resource="#Teacher"/>
+</rdf:Property>
+
+</rdf:RDF>

@@ -1,0 +1,94 @@
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:asu="http://www.mydomain.org/asu-ns">
+
+<asu:Teacher rdf:ID="Teach1">
+<asu:has_name>Dr Srividya bansal</asu:has_name>
+</asu:Teacher>
+
+<asu:Teacher rdf:ID="Teach2">
+<asu:has_name>Dr Ajay bansal</asu:has_name>
+</asu:Teacher>
+
+<asu:Teacher rdf:ID="Teach3">
+<asu:has_name>Dr Kevin Gary</asu:has_name>
+</asu:Teacher>
+
+<asu:Teacher rdf:ID="Teach4">
+<asu:has_name>Dr Timothy Lindquist</asu:has_name>
+</asu:Teacher>
+
+<asu:Teacher rdf:ID="Teach5">
+<asu:has_name>Dr Ashraff Gaffar</asu:has_name>
+</asu:Teacher>
+
+<asu:Student rdf:ID="Stud1">
+<asu:has_name>Satish Bhambri</asu:has_name>
+</asu:Student>
+
+<asu:Student rdf:ID="Stud2">
+<asu:has_name>Dhruti Desai</asu:has_name>
+</asu:Student>
+
+<asu:Student rdf:ID="Stud3">
+<asu:has_name>Chirag Arora</asu:has_name>
+</asu:Student>
+
+<asu:Student rdf:ID="Stud4">
+<asu:has_name>Adam Shah</asu:has_name>
+</asu:Student>
+
+<asu:Course rdf:ID="Course1">
+<asu:has_name>Semantic Web</asu:has_name>
+</asu:Course>
+
+<asu:Course rdf:ID="Course2">
+<asu:has_name>Algorithms and Data Structures</asu:has_name>
+</asu:Course>
+
+<asu:Course rdf:ID="Course3">
+<asu:has_name>Software Enterprise</asu:has_name>
+</asu:Course>
+
+<asu:Course rdf:ID="Course4">
+<asu:has_name>Web Applications</asu:has_name>
+</asu:Course>
+
+<asu:Course rdf:ID="Course5">
+<asu:has_name>Human Computer Interaction</asu:has_name>
+</asu:Course>
+
+<asu:Description rdf:about="Course1">
+<asu:has_teacher rdf:resource="#Teach4" />
+<asu:has_students rdf:parseType="Collection">
+<rdf:Description rdf:about="#Stud1"/>
+<rdf:Description rdf:about="#Stud3"/>
+<rdf:Description rdf:about="#Stud4"/>
+</asu:has_students>
+
+</asu:Description>
+<asu:Description rdf:about="Course2">
+<asu:has_teacher rdf:resource="#Teach1" />
+<asu:has_students rdf:resource="#Stud4" />
+</asu:Description>
+
+
+<asu:Description rdf:about="Course3">
+<asu:has_teacher rdf:resource="#Teach3" />
+<asu:has_students rdf:resource="#Stud3" />
+</asu:Description>
+
+<asu:Description rdf:about="Course5">
+<asu:has_teacher rdf:resource="#Teach5" />
+<asu:has_students rdf:resource="#Stud4" />
+</asu:Description>
+
+<asu:Description rdf:about="Course4">
+<asu:has_teacher rdf:resource="#Teach2" />
+<asu:has_students rdf:parseType="Collection">
+<rdf:Description rdf:about="#Stud1"/>
+<rdf:Description rdf:about="#Stud4"/>
+</asu:has_students>
+</asu:Description>
+</rdf:RDF>
