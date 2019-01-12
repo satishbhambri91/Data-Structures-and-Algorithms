@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rdf:RDF 
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+xmlns:foaf="http://xmlns.com/foaf/0.1/">
+<foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Satish"> 
+	<foaf:name>Satish Bhambri</foaf:name>
+	<foaf:homepage rdf:resource="https://www.linkedin.com/in/satish-bhambri-9164b997/"></foaf:homepage>
+	<foaf:depiction rdf:resource="Satish.jpg"></foaf:depiction> 
+	<foaf:phone>+14809307074</foaf:phone> 
+	<foaf:interest>Semantic Web</foaf:interest>
+	<foaf:knows rdf:resource="Kashish"></foaf:knows> 
+</foaf:Person>
+<foaf:Person rdf:about="http://xmlns.com/foaf/0.1/Satish/Kashish">
+<foaf:name>Kashish Babbar</foaf:name>
+<foaf:homepage rdf:resource="https://www.facebook.com/kashishbabbar"></foaf:homepage> <foaf:depiction rdf:resource="Kashish.jpg"></foaf:depiction>
+<foaf:phone>+919530704122</foaf:phone>
+<foaf:interest>Semantic Web</foaf:interest>
+<foaf:knows rdf:resource="Vishal"></foaf:knows>
+</foaf:Person>
+</rdf:RDF>
