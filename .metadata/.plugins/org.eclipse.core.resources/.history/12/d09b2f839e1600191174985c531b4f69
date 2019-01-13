@@ -1,0 +1,23 @@
+
+public class FirstUniqueCharinStr {
+	 public int firstUniqChar(String s) {
+	        Map<Character,Integer> letterCount = new HashMap<Character,Integer>();
+	        char[] arr = s.toCharArray();
+	        
+	        for (char c:arr) {
+	            letterCount.put(c, letterCount.getOrDefault(c,0)+1);
+	        }
+	        if (letterCount.containsValue(1) == false) {
+	            return -1;
+	        } 
+	        
+	        int mini = s.length()+1;
+	        for (char C : letterCount.keySet()) {
+	            if (letterCount.get(C).equals(1)) {
+	                mini = Math.min(mini,s.indexOf(C));
+	            }
+	        }    
+	        return mini;
+	    }
+
+}

@@ -1,0 +1,23 @@
+
+public class ReverseString {
+	
+	 public String reverseString1(String s) {
+	        
+	        char[] arr = s.toCharArray();
+	        int j = arr.length - 1;
+	        
+	        for (int i = 0; i < j; i++){
+	            
+	            char temp = arr[j];
+	            arr[j] = arr[i];
+	            arr[i] = temp;
+	            j--;
+	            
+	        }
+	        
+	        String str = String.valueOf(arr);
+	        return str;
+	        
+	    }
+
+}

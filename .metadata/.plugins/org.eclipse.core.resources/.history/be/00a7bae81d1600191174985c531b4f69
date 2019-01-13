@@ -1,0 +1,12 @@
+
+public class NumberOfSubsets {
+	
+	public static int countSets(int[] arr, int total){
+		return rec(arr, total, arr.length - 1);
+	}
+	
+	public static int rec(int[] arr, int total, int i){
+		
+	}
+
+}
